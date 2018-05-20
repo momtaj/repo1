@@ -4,7 +4,7 @@ its momo
 
 from matplotlib.lines import Line2D
 from cmath import *
-
+hello world
 from numpy import array, cos, sin, pi, angle, imag, linspace, pad
 
 from function import lrange, dtft, step
