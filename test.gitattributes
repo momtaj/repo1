@@ -34,4 +34,4 @@ ylabel(r'$s\longrightarrow$')
 graph_label = Line2D([], [], color='blue', marker='o',
                           markersize=1, label='S[n]')
 legend(handles=[graph_label])
-grid (True)
+
