@@ -1,0 +1,37 @@
+from matplotlib.lines import Line2D
+from cmath import *
+
+from numpy import array, cos, sin, pi, angle, imag, linspace, pad
+#from scipy import convolve
+from function import lrange, dtft, step
+from matplotlib.pyplot import legend, figure, xlabel, ylabel, suptitle, \
+                            subplots_adjust, show, stem, grid, plot, subplot, \
+                            xlim, ylim
+
+
+""" Problem 3.2 """
+fig_num=1
+F = lrange(-1/2,1/2,1/0.01)
+
+"""
+a) s[n]=(0.6).^abs(n)[ step[ n+10]-step[n-11] ]. """
+
+n = linspace (-11,11,len(F))    
+s = (0.6)**(abs(n))*(step(n+10)-step(n-11))
+
+print('\n\t\tChapter 4: Problem 4.5')
+
+[S,F] = dtft(s,n,F)
+
+figure (fig_num)
+fig_num = fig_num+1
+subplot(221)
+plot(n,s)
+suptitle('Problem 4.5 Part A')
+xlabel(r'$n\longrightarrow$')
+ylabel(r'$s\longrightarrow$')
+
+graph_label = Line2D([], [], color='blue', marker='o',
+                          markersize=1, label='S[n]')
+legend(handles=[graph_label])
+grid (True)
