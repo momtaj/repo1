@@ -4,6 +4,7 @@ from cmath import *
 from numpy import array, cos, sin, pi, angle, imag, linspace, pad
 #from scipy import convolve
 from function import lrange, dtft, step
+
 from matplotlib.pyplot import legend, figure, xlabel, ylabel, suptitle, \
                             subplots_adjust, show, stem, grid, plot, subplot, \
                             xlim, ylim
@@ -27,11 +28,14 @@ figure (fig_num)
 fig_num = fig_num+1
 subplot(221)
 plot(n,s)
+
 suptitle('Problem 4.5 Part A')
+
 xlabel(r'$n\longrightarrow$')
 ylabel(r'$s\longrightarrow$')
 
 graph_label = Line2D([], [], color='blue', marker='o',
                           markersize=1, label='S[n]')
 legend(handles=[graph_label])
+
 grid (True)
